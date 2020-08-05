@@ -7,6 +7,7 @@ class AppRouter extends React.Component {
         return(
             <Switch>
                 <Route exact path="/" component={Home}/>
+                <Route/>
             </Switch>
         )
     }
