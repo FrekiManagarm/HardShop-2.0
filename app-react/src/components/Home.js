@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
+import Header from './NavBar'
 
 class Home extends React.Component {
     constructor() {
@@ -11,7 +12,7 @@ class Home extends React.Component {
     render() {
         return(
             <div>
-                <NavBar/>
+                <Header/>
                 <div className="jumbotron">
                     <h1 className="display-4">Bonjour et bienvenue au site du HardShop version 2.0</h1>
                     <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
