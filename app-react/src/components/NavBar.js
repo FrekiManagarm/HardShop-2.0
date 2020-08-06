@@ -11,17 +11,10 @@ class Header extends React.Component {
     render() {
         return(
             <>
-                <Navbar bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                    <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
-                    <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
-                    </Form>
+                <Navbar collapseOnSelect bg="dark" expand="lg" variant="dark">
+                    <a href="/" className="navbar-brand">
+                        <img src="https://i.imgur.com/9kR20Nx.png" alt="Logo"/>
+                    </a>
                 </Navbar>
             </>
         )
