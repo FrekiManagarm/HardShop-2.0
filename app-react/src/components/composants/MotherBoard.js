@@ -1,6 +1,7 @@
 import React from 'react'
+import Header from '../NavBar'
 
-class Request extends React.Component {
+class MotherBoard extends React.Component {
     constructor() {
         super()
         this.state = {}
@@ -8,10 +9,11 @@ class Request extends React.Component {
     render() {
         return(
             <div>
-                <h1>Ceci est le formulaire de requête à admin</h1>
+                <Header/>
+                Ceci est la page Carte Mère
             </div>
         )
     }
 }
 
-export default Request
+export default MotherBoard

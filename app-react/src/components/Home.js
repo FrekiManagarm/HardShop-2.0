@@ -77,7 +77,7 @@ class Home extends React.Component {
     <div className="col-md-6 text-center">
       <h2>Tout <b>est ici</b> !</h2>
       <p>Il manque quelque chose ? Faites-le nous savoir ! 
-        <a href="mailto:geek2nerd2019@gmail.com" className="action text-dark">Request</a></p>
+        <Link href="mailto:geek2nerd2019@gmail.com" className="action text-dark">Request</Link></p>
     </div>
   </div>
   <div className="row gutter-1">

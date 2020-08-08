@@ -23,11 +23,11 @@ class Header extends React.Component {
               
               <NavDropdown title="Composants" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="/CPU">Processeur</NavDropdown.Item>
-                <NavDropdown.Item href="/CarteMère">
+                <NavDropdown.Item href="/Motherboard">
                   Carte Mère
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/Mémoire">RAM</NavDropdown.Item>
-                <NavDropdown.Item href="">Carte Graphique</NavDropdown.Item>
+                <NavDropdown.Item href="/RAM">RAM</NavDropdown.Item>
+                <NavDropdown.Item href="/GPU">Carte Graphique</NavDropdown.Item>
                 <NavDropdown.Item href="/Refroidissement">
                   Refroidissement
                 </NavDropdown.Item>
