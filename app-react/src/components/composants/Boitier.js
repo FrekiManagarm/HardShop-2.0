@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../NavBar'
+import Footer from '../Footer'
 
 class Boitier extends React.Component {
     constructor() {
@@ -10,7 +11,10 @@ class Boitier extends React.Component {
         return(
             <div>
                 <Header/>
-                Ceci est la page des Boitiers
+                    <div className="mb-10 text-center">
+                        Ceci est la page des Boitiers
+                    </div>
+                <Footer/>
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../NavBar'
+import Footer from '../Footer'
 
 class GPU extends React.Component {
     constructor() {
@@ -11,6 +12,7 @@ class GPU extends React.Component {
             <div>
                 <Header/>
                 ceci est la page GPU
+                <Footer/>
             </div>
         )
     }

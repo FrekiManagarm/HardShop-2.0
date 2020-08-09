@@ -15,15 +15,15 @@ class Footer extends React.Component {
                         <div className="row">
                         <div className="col">
                             <ul className="list-group list-group-minimal">
-                                <li className="list-group-item"><div href="https://www.facebook.com/geeke.tonerd.9" className="link">FaceBook</div></li>
-                                <li className="list-group-item"><div href="https://www.instagram.com/geek2_nerd/?hl=fr" className="link">Instagram</div></li>
-                                <li className="list-group-item"><div href="https://twitter.com/Geek2Nerd1" className="link">Twitter</div></li>
+                                <li className="list-group-item"><Link to="https://www.facebook.com/geeke.tonerd.9" className="link">FaceBook</Link></li>
+                                <li className="list-group-item"><Link to="https://www.instagram.com/geek2_nerd/?hl=fr" className="link">Instagram</Link></li>
+                                <li className="list-group-item"><Link to="https://twitter.com/Geek2Nerd1" className="link">Twitter</Link></li>
                             </ul>
                         </div>
                         <div className="col">
                             <ul className="list-group list-group-minimal">
-                                <li className="list-group-item"><div href="https://discord.gg/XZES3TW"className="link">Le Discord</div></li>
-                                <li className="list-group-item"><div className="link">Qui sommes nous ?</div></li>
+                                <li className="list-group-item"><Link to="https://discord.gg/XZES3TW"className="link">Le Discord</Link></li>
+                                <li className="list-group-item"><Link className="link">Qui sommes nous ?</Link></li>
                             </ul>
                         </div>
                         </div>

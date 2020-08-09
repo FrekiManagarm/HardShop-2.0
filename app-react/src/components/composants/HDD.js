@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../NavBar'
+import Footer from '../Footer'
 
 class HDD extends React.Component {
     constructor() {
@@ -11,6 +12,7 @@ class HDD extends React.Component {
             <div>
                 <Header/>
                 Ceci est la page des HDD
+                <Footer/>
             </div>
         )
     }

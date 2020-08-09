@@ -33,7 +33,7 @@ class Header extends React.Component {
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/SSD">SSD</NavDropdown.Item>
                 <NavDropdown.Item href="/PSU">Alimentation PC</NavDropdown.Item>
-                <NavDropdown.Item href="/Boîtier">Boîtier</NavDropdown.Item>
+                <NavDropdown.Item href="/Boitier">Boîtier</NavDropdown.Item>
                 <NavDropdown.Item href="/HDD">HDD</NavDropdown.Item>
                 <NavDropdown.Item href="">OS</NavDropdown.Item>
               </NavDropdown>
@@ -53,6 +53,7 @@ class Header extends React.Component {
                     <Button variant="outline-info">Search</Button>
                 </Form>
                 <Nav.Link href="/login">Connexion</Nav.Link>
+                <Nav.Link href="/register">Enregistrer</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
