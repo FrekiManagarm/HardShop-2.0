@@ -5,8 +5,20 @@ import Footer from './Footer'
 class Register extends React.Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            name = '',
+            email = '',
+            password = '',
+            confirm_password = ''
+        }
     }
+
+    handleNameChange = event => {
+        this.setState({ name: event.target.value }, () => {
+            console.log(this.state)
+        })
+    }
+
     render() {
         return(
             <div>
@@ -31,14 +43,14 @@ class Register extends React.Component {
                             <input type="password" className="form-control" id="exampleInputPassword1" />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Retaper le mot de passe</label>
+                            <label htmlFor="exampleInputEmail1">Confirmer le mot de passe</label>
                             <input type="password" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group form-check">
                             <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                             <label className="form-check-label" htmlFor="exampleCheck1">Se souvenir de moi</label>
                         </div>
-                        <button type="submit" className="btn btn-primary mb-10">S'enregistrer</button>
+                        <button type="submit" className="btn btn-primary mb-10">S'inscrire</button>
                     </form>
                 </div>
                 <Footer/>
