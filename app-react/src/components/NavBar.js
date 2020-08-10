@@ -53,7 +53,7 @@ class Header extends React.Component {
                     <Button variant="outline-info">Search</Button>
                 </Form>
                 <Nav.Link href="/login">Connexion</Nav.Link>
-                <Nav.Link href="/register">Enregistrer</Nav.Link>
+                <Nav.Link href="/register">S'inscrire</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
