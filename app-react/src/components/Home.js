@@ -46,7 +46,7 @@ class Home extends React.Component {
 <div className="container">
   <div className="row justify-content-center">
     <div className="col-md-6 text-center">
-      <h2><b>Tout ce qu'il faut retenir !</b></h2>
+      <h2><b>En ce moment ...</b></h2>
       <p></p>
     </div>
   </div>
@@ -77,7 +77,7 @@ class Home extends React.Component {
     <div className="col-md-6 text-center">
       <h2>Tout <b>est ici</b> !</h2>
       <p>Il manque quelque chose ? Faites-le nous savoir ! 
-        <Link href="mailto:geek2nerd2019@gmail.com" className="action text-dark">Request</Link></p>
+        <a href="mailto:geek2nerd2019@gmail.com" className="action text-dark">Request</a></p>
     </div>
   </div>
   <div className="row gutter-1">

@@ -27,11 +27,11 @@ const content = [
     userProfile: "https://imgur.com/u7h24fM.jpg",
   },
   {
-    title: "Phasellus volutpat metus",
+    title: "La gamme Altyk",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula.",
+      "Des PC tout fait ! Pour tout les budgets !",
     button: "Buy now",
-    image: "https://i.imgur.com/DvmN8Hx.jpg",
+    image: "https://i.imgur.com/RrJpgvy.jpg",
     user: "L'équipe HardShop",
     userProfile: "https://imgur.com/u7h24fM.jpg",
   },

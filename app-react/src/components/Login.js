@@ -25,7 +25,7 @@ class Login extends React.Component {
 
     handleSubmit = event => {
         this.preventDefault()
-        console.log('connexion')
+        console.log('Connexion')
     }
 
     render() {
@@ -37,13 +37,13 @@ class Login extends React.Component {
                     <form method="POST" onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email</label>
-                            <input onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input onChange={this.handleEmailChange} type="email" className="form-control" placeholder="rentrez votre nom" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1" >Mot de passe</label>
-                            <input onChange={this.handlePasswordChange} type="password" className="form-control" id="exampleInputPassword1" />
+                            <input onChange={this.handlePasswordChange} type="password" className="form-control" placeholder="rentrez le mot de passe" id="exampleInputPassword1" />
                         </div>
-                        <button type="submit" className="btn btn-primary mb-10">Submit</button>
+                        <button type="submit" className="btn btn-primary mb-10">Me connecter</button>
                     </form>
                 </div>
                 <Footer/>

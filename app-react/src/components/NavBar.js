@@ -50,10 +50,11 @@ class Header extends React.Component {
             <Nav>
                 <Form inline>
                     <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
+                    <Button variant="outline-info" className="mr-2">Search</Button>
                 </Form>
-                <Nav.Link href="/login">Connexion</Nav.Link>
                 <Nav.Link href="/register">S'inscrire</Nav.Link>
+                <Nav.Link href="/login">Connexion</Nav.Link>
+                
             </Nav>
           </Navbar.Collapse>
         </Navbar>
