@@ -5,26 +5,43 @@ import Footer from './Footer'
 class Login extends React.Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            email: '',
+            password: ''
+        }
     }
+
+    handleEmailChange = event => {
+        this.setState({ email: event.target.value }, () => {
+            console.log(this.state)
+        })
+    }
+
+    handlePasswordChange = event => {
+        this.setState({ password: event.target.value }, () => {
+            console.log(this.state)
+        })
+    }
+
+    handleSubmit = event => {
+        this.preventDefault()
+        console.log('connexion')
+    }
+
     render() {
         return(
             <div>
                 <NavBar/>
                 <div class="container w-50">
-                    <h2 class="text-center my-5">Enregistrement</h2>
-                    <form>
+                    <h2 class="text-center my-5">Connexion</h2>
+                    <form method="POST" onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email</label>
-                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1" >Mot de passe</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" />
-                        </div>
-                        <div className="form-group form-check">
-                            <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                            <label className="form-check-label" htmlFor="exampleCheck1">Se souvenir de moi</label>
+                            <input onChange={this.handlePasswordChange} type="password" className="form-control" id="exampleInputPassword1" />
                         </div>
                         <button type="submit" className="btn btn-primary mb-10">Submit</button>
                     </form>
