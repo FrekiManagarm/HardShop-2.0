@@ -1,6 +1,8 @@
 import React from 'react'
 import NavBar from './NavBar'
 import Footer from './Footer'
+import Axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 class Register extends React.Component {
     constructor() {
@@ -9,7 +11,8 @@ class Register extends React.Component {
             name: '',
             email: '',
             password: '',
-            confirm_password: ''
+            confirm_password: '',
+            redirect: false
         }
     }
 
@@ -40,9 +43,28 @@ class Register extends React.Component {
     handleSubmit = event => {
         event.preventDefault()
         console.log('inscription')
+
+        let bodyFormData = new FormData()
+        bodyFormData.set('name', this.state.name)
+        bodyFormData.set('email', this.state.email)
+        bodyFormData.set('password', this.state.password)
+        bodyFormData.set('confirm_password', this.state.confirm_password)
+
+        Axios.post('http://127.0.0.1:8000/api/register', bodyFormData)
+            .then(res => {
+                console.log(res.data)
+                localStorage.setItem('token', res.data.api_token)
+                this.setState({ redirect: true })
+            })
+            .catch(error => {
+                console.log(error.response)
+            })
     }
 
     render() {
+        if(this.state.redirect) {
+            return (<Redirect to="/"/>)
+        }
         return(
             <div>
                 <NavBar/>
