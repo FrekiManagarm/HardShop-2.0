@@ -27,8 +27,8 @@ class Login extends React.Component {
         })
     }
 
-    handleSubmit = event => {
-        this.preventDefault()
+    handleSubmit = event => {                   // Le bout de code ci-dessous permet de gérer la connexion en méthode POST sur l'API avec
+        event.preventDefault()                  // Axios pour gérer les requêtes.
         console.log('Connexion')
 
         let bodyFormData = new FormData()
@@ -37,7 +37,7 @@ class Login extends React.Component {
 
         Axios.post('http://127.0.0.1:8000/api/login', bodyFormData)
             .then(res => {
-                console.log(res.data)
+                console.log(res)
                 localStorage.setItem('token', res.data.api_token)
                 this.setState({ redirect: true })
             })
@@ -65,14 +65,14 @@ class Login extends React.Component {
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email</label>
                             <input onChange={this.handleEmailChange} type="email" className="form-control" placeholder="rentrez votre email" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                            { this.state.errors && this.state.errors.email ? <div className="invalid-feedback text-danger">{ this.state.errors['email']}</div> : '' }
+        { this.state.errors && this.state.errors.email ? <div class="invalid-feedback">{this.state.errors['email']}</div> : '' }
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1" >Mot de passe</label>
-                            <input onChange={this.handlePasswordChange} type="current-password" className="form-control" placeholder="rentrez le mot de passe" id="exampleInputPassword1" />
-                            { this.state.errors && this.state.errors.password ? <div className="invalid-feedback text-danger">{ this.state.errors['password']}</div> : '' }
+                            <input onChange={this.handlePasswordChange} type="password" className="form-control" placeholder="rentrez le mot de passe" id="exampleInputPassword1" />
+                            { this.state.errors && this.state.errors.password ? <div class="invalid-feedback">{ this.state.errors['password'] }</div> : '' }
                         </div>
-                        <button type="submit" onSubmit={this.handleSubmit} className="btn btn-primary mb-10">Me connecter</button>
+                        <button type="submit" className="btn btn-primary mb-10">Me connecter</button>
                     </form>
                 </div>
                 <Footer/>
