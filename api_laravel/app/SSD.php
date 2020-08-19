@@ -17,4 +17,8 @@ class SSD extends Model
         'nom',
         'écriture'
     ];
+
+    public function SSDs() {
+        return $this->hasMany('App\SSD');
+    }
 }

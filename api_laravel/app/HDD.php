@@ -16,4 +16,8 @@ class HDD extends Model
         'nom',
         'transfert'
     ];
+
+    public function HDDs() {
+        return $this->hasMany('App\HDD');
+    }
 }

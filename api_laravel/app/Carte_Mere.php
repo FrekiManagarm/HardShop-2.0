@@ -16,4 +16,8 @@ class Carte_Mere extends Model
         'proco_compatible',
         'socket'
     ];
+
+    public function Carte_Meres() {
+        return $this->hasMany('App\Carte_Mere');
+    }
 }

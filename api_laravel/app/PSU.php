@@ -15,4 +15,8 @@ class PSU extends Model
         'nom',
         'puissance'
     ];
+
+    public function PSUs() {
+        return $this->hasMany('App\PSU');
+    }
 }

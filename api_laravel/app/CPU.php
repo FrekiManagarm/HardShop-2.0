@@ -21,4 +21,8 @@ class CPU extends Model
         'socket',
         'type'
     ];
+
+    public function CPUs() {
+        return $this->hasMany('App\CPU');
+    }
 }

@@ -16,4 +16,8 @@ class Boitier extends Model
         'nom',
         'ventilateur'
     ];
+
+    public function Boitiers() {
+        return $this->hasMany('App\Boitier');
+    }
 }

@@ -16,4 +16,8 @@ class RAM extends Model
         'nom',
         'quantité'
     ];
+
+    public function RAMs() {
+        return $this->hasMany('App\RAM');
+    }
 }

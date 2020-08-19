@@ -16,4 +16,8 @@ class Cooling extends Model
         'socket',
         'type'
     ];
+
+    public function Coolings() {
+        return $this->hasMany('App\Cooling');
+    }
 }
