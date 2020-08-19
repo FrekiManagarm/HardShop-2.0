@@ -12,7 +12,14 @@ class Register extends React.Component {
             email: '',
             password: '',
             confirm_password: '',
-            redirect: false
+            redirect: false,
+            errors: [] 
+        }
+    }
+
+    componentWillMount() {
+        if(localStorage.getItem('token')) {
+            this.setState({ redirect: true })
         }
     }
 
@@ -57,7 +64,11 @@ class Register extends React.Component {
                 this.setState({ redirect: true })
             })
             .catch(error => {
-                console.log(error.response)
+                if(error.response.status === 401) {
+                    this.setState({ errors: error.response.data.errors }, () => {
+                        console.log(this.state)
+                    })
+                }
             })
     }
 
@@ -73,19 +84,23 @@ class Register extends React.Component {
                     <form method="POST" onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Nom</label>
-                            <input onChange={this.handleNameChange} type="text" className="form-control" id="exampleInputEmail1" placeholder="renseignez votre nom" aria-describedby="emailHelp" />
+                            <input onChange={this.handleNameChange} type="text" className={`form-control ${this.state.errors && this.state.errors.name ? "is-invalid" : '' }` } id="exampleInputEmail1" placeholder="renseignez votre nom" aria-describedby="emailHelp" />
+                            { this.state.errors && this.state.errors.name ? <div className="invalid-feedback">{this.state.errors['name']}</div> : '' }
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Adresse E-mail</label>
-                            <input onChange={this.handleEmailChange} type="email" className="form-control" id="exampleInputEmail1" placeholder="email" aria-describedby="emailHelp" />
+                            <input onChange={this.handleEmailChange} type="email" className={`form-control ${this.state.errors && this.state.errors.email ? "is-invalid" : '' }`} id="exampleInputEmail1" placeholder="email" aria-describedby="emailHelp" />
+                            { this.state.errors && this.state.errors.email ? <div className="invalid-feedback">{this.state.errors['email']}</div> : '' }
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Mot de passe</label>
-                            <input onChange={this.handlePasswordChange} type="password" className="form-control" placeholder="mot de passe" id="exampleInputPassword1" />
+                            <input onChange={this.handlePasswordChange} type="password" className={`form-control ${this.state.errors && this.state.errors.password ? "is-invalid" : '' }`} placeholder="mot de passe" id="exampleInputPassword1" />
+                            { this.state.errors && this.state.errors.password ? <div className="invalid-feedback">{this.state.errors['password']}</div> : '' }               
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Confirmer le mot de passe</label>
-                            <input onChange={this.handleConfirm_PasswordChange} type="password" className="form-control" id="exampleInputEmail1" placeholder="confirmez le mot de passe" aria-describedby="emailHelp" />
+                            <input onChange={this.handleConfirm_PasswordChange} type="password" className={`form-control ${this.state.errors && this.state.errors.confirm_password ? "is-invalid" : '' }`} id="exampleInputEmail1" placeholder="confirmez le mot de passe" aria-describedby="emailHelp" />
+                            { this.state.errors && this.state.errors.confirm_password ? <div className="invalid-feedback">{this.state.errors['confirm_password']}</div> : '' }        
                         </div>
                         <button type="submit" className="btn btn-primary mb-10">S'inscrire</button>
                     </form>

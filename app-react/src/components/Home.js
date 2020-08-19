@@ -18,7 +18,7 @@ class Home extends React.Component {
          <div>
 {/* hero */}
 <section className="bg-primary pt-4">
-<div className="container">
+<div className="container mt-5">
   <div className="row justify-content-center">
     <div className="col-lg-10 text-white text-center">
       <h1 className="font-weight-light"><b>Ici se trouve tout ce dont vous avez besoin.</b> Les composants, les configs et les News en lien avec le Hardware.</h1>

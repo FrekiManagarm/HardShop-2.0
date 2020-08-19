@@ -1,13 +1,20 @@
 import React from 'react'
-import { Navbar, NavDropdown, Nav, Form, FormControl, Button } from 'react-bootstrap'
+import { Navbar, NavDropdown, Nav, Button } from 'react-bootstrap'
 
 class Header extends React.Component {
     constructor() {
         super()
         this.state = {
-
+          token: null
         }
     }
+
+    logout = () => {
+      localStorage.setItem('token', '')
+      localStorage.clear()
+      this.setState({ token: null })
+    }
+
     render() {
         return(
             <header>
@@ -48,12 +55,21 @@ class Header extends React.Component {
               </NavDropdown>
             </Nav>
             <Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info" className="mr-2">Search</Button>
-                </Form>
-                <Nav.Link href="/register">S'inscrire</Nav.Link>
-                <Nav.Link href="/login">Connexion</Nav.Link>
+                {
+                  localStorage.getItem('token')
+                  ?
+                  <div>
+                    <Button href="/Photo">Photo</Button>
+                    <Button className="btn ml-1" onClick={() => this.logout()}>Déconnexion</Button>
+                  </div>
+                  :
+                  <div>
+                    <Button href="/register">S'inscrire</Button>
+                    <Button className="ml-1" href="/login">Connexion</Button>
+                  </div>
+                  
+                }
+                
                 
             </Nav>
           </Navbar.Collapse>

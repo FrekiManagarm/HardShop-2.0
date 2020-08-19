@@ -15,6 +15,12 @@ class Login extends React.Component {
         }
     }
 
+    componentWillMount() {
+        if(localStorage.getItem('token')) {
+            this.setState({ redirect: true })
+        }
+    }
+
     handleEmailChange = event => {
         this.setState({ email: event.target.value }, () => {
             console.log(this.state)
@@ -47,6 +53,7 @@ class Login extends React.Component {
                         console.log(this.state)
                     })
                 }
+                console.log(error.response)
             })
     }
 
@@ -64,14 +71,15 @@ class Login extends React.Component {
                     <form method="POST" onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email</label>
-                            <input onChange={this.handleEmailChange} type="email" className="form-control" placeholder="rentrez votre email" id="exampleInputEmail1" aria-describedby="emailHelp" />
-        { this.state.errors && this.state.errors.email ? <div class="invalid-feedback">{this.state.errors['email']}</div> : '' }
+                            <input onChange={this.handleEmailChange} type="email" className={`form-control ${this.state.errors && this.state.errors.email ? "is-invalid" : '' }`} placeholder="rentrez votre email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            { this.state.errors && this.state.errors.email ? <div className="invalid-feedback">{this.state.errors['email']}</div> : '' }
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1" >Mot de passe</label>
-                            <input onChange={this.handlePasswordChange} type="password" className="form-control" placeholder="rentrez le mot de passe" id="exampleInputPassword1" />
-                            { this.state.errors && this.state.errors.password ? <div class="invalid-feedback">{ this.state.errors['password'] }</div> : '' }
+                            <input onChange={this.handlePasswordChange} type="password" className={`form-control ${this.state.errors && this.state.errors.password ? "is-invalid" : '' }`} placeholder="rentrez le mot de passe" id="exampleInputPassword1" />
+                            { this.state.errors && this.state.errors.password ? <div className="invalid-feedback">{ this.state.errors['password'] }</div> : '' }
                         </div>
+                        { this.state.errors && this.state.errors === 'bad_credentials' ? <div className="alert alert-warning">Vos identifiants de connexion sont incorrectes</div> : '' }
                         <button type="submit" className="btn btn-primary mb-10">Me connecter</button>
                     </form>
                 </div>
