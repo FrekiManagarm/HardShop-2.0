@@ -24,8 +24,6 @@ class Home extends React.Component {
       <h1 className="font-weight-light"><b>Ici se trouve tout ce dont vous avez besoin.</b> Les composants, les configs et les News en lien avec le Hardware.</h1>
     </div>
   </div>
-  <div className="row">
-  </div>
 </div>
 </section>
 {/* / hero */}

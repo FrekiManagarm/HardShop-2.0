@@ -46,21 +46,16 @@ class Header extends React.Component {
               </NavDropdown>
               <Nav.Link href="/News">News</Nav.Link>
               <Nav.Link href="/Configuration">Configuration</Nav.Link>
-              <NavDropdown title="Paramètres" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/boutique">Boutique</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/CRUDs">
-                  CRUD
-                </NavDropdown.Item>
-              </NavDropdown>
             </Nav>
             <Nav>
                 {
                   localStorage.getItem('token')
                   ?
                   <div>
-                    <Button href="/Photo">Photo</Button>
                     <Button className="btn ml-1" onClick={() => this.logout()}>Déconnexion</Button>
+                    <NavDropdown title="Paramètres">
+                      <NavDropdown.Item href="/CRUD">CRUD</NavDropdown.Item>
+                    </NavDropdown>
                   </div>
                   :
                   <div>
