@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, CardDeck, Button } from 'react-bootstrap'
 import Header from '../NavBar'
 import Footer from '../Footer'
 

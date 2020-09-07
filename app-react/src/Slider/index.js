@@ -9,20 +9,20 @@ import { Link } from "react-router-dom";
 
 const content = [
   {
-    title: "Les processeurs de 10ième Gen sont là venez les découvrir !",
+    title: "Apple se lance dans l'architecture ARM ! Arriverons t-ils à tenir leur promesse de puissance ?",
     description:
-      "Ca y est ! Officiellement les nouveaux processeur toujours en 14 nm de chez Intel sont arrivés en stock.",
+      "En rompant leur contrat avec Intel, Apple s'engage à l'avenir à fournir toute leur gamme en puce avec architecture ARM. La puissance sera t-elle au rendez-vous ?",
     button: "Lire plus",
-    image: "https://i.imgur.com/Dq8WyO6.jpg",
+    image: "https://i.imgur.com/BCtCqNO.jpg",
     user: "L'équipe HardShop",
     userProfile: "https://imgur.com/u7h24fM.jpg",
   },
   {
-    title: "Une nouvelle référence est là ! Asus ROG NVidia RTX 2080 Ti Strix ",
+    title: "Ca y est ! Les Nouvelles RTX 3000 séries ont été annoncée !",
     description:
-      "Un monstre de puissance à la portée de tous. Sans son prix allucinant la vitrine de chez Asus nous délivre une puissance incomparable.",
+      "Venez consulter les trois futures références de NVidia. J'appelle la 3070, la 3080 et la monstrueuse RTX 3090 avec ses 24 Go de GDDR6X",
     button: "Découvrir",
-    image: "https://imgur.com/2Z3HPtl.jpg",
+    image: "https://i.imgur.com/q2MZEWb.jpg",
     user: "L'équipe HardShop",
     userProfile: "https://imgur.com/u7h24fM.jpg",
   },
