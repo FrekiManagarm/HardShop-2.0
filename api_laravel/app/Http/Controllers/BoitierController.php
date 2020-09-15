@@ -19,6 +19,17 @@ class BoitierController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'image' => 'required|unique:boitiers|max:255',
+            'RGB' => 'boolean',
+            'alim_inclus' => 'boolean',
+            'couleur' => 'required',
+            'façade_latérale' => 'required',
+            'format' => 'required',
+            'nom' => 'required|unique:boitiers|max:255',
+            'ventilateur' => 'required'
+        ]);
+
         $boitier = Boitier::create($request->all());
 
         return response()->json($boitier, 201);

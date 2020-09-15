@@ -19,6 +19,17 @@ class RAMController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'capacité' => 'required',
+            'fréquence' => 'required',
+            'image' => 'required|unique:RAMs|max:200',
+            'interface' => 'required',
+            'latence' => 'required',
+            'marque' => 'required',
+            'nom' => 'required|unique:RAMs|max:200',
+            'quantité' => 'required'
+        ]);
+
         $rAM = RAM::create($request->all());
 
         return response()->json($rAM, 201);

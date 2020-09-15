@@ -19,6 +19,18 @@ class HDDController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'RPM' => 'integer|required',
+            'capacité' => 'required',
+            'format' => 'required',
+            'image' => 'required|unique:HDDs|max:200',
+            'interface' => 'required',
+            'mémoire_cache' => 'required',
+            'nom' => 'required|unique:HDDs|max:200',
+            'transfert' => 'required'
+        ]);
+
+
         $hDD = HDD::create($request->all());
 
         return response()->json($hDD, 201);

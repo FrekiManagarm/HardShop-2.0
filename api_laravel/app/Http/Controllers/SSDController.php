@@ -20,6 +20,18 @@ class SSDController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'capacité' => 'required',
+            'connectique' => 'required',
+            'format' => 'required',
+            'image' => 'required|unique:SSDs|max:200',
+            'interface' => 'required',
+            'lecture' => 'required',
+            'marque' => 'required',
+            'nom' => 'required|unique:SSDs|max:200',
+            'écriture' => 'required'
+        ]);
+
         $sSD = SSD::create($request->all());
 
         return response()->json($sSD, 201);

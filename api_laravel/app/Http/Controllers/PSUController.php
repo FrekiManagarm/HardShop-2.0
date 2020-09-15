@@ -20,6 +20,16 @@ class PSUController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'certif' => 'required',
+            'format' => 'required',
+            'image' => 'required|unique:PSUs|max:200',
+            'marque' => 'required',
+            'modulaire' => 'boolean',
+            'nom' => 'required|unique:200|max:200',
+            'puissance' => 'required'
+        ]);
+
         $pSU = PSU::create($request->all());
 
         return response()->json($pSU, 201);

@@ -19,6 +19,10 @@ class OSController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            
+        ]);
+
         $oS = OS::create($request->all());
 
         return response()->json($oS, 201);

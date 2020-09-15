@@ -19,6 +19,17 @@ class CoolingController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'bruit' => 'required',
+            'format' => 'required',
+            'image' => 'required|unique:Coolings|max:200',
+            'marque' => 'required',
+            'matériaux' => 'required',
+            'nom' => 'required|unique:Coolings|max:255',
+            'socket' => 'required',
+            'type' => 'required'
+        ]);
+
         $cooling = Cooling::create($request->all());
 
         return response()->json($cooling, 201);

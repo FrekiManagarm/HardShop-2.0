@@ -20,6 +20,15 @@ class CarteMereController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'chipset' => 'required',
+            'constructeur' => 'required',
+            'format' => 'required',
+            'fréquence_mémoire' => 'required',
+            'image' => 'required'
+        ]);
+
+
         $carte_Mere = Boitier::create($request->all());
 
         return response()->json($carte_Mere, 201);
